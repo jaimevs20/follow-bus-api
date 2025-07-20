@@ -14,23 +14,23 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "linha_parada", schema = "followbus")
+@Table(name = "line_stop", schema = "followbus")
 @Getter
 @Setter
 public class LineStop {
+	
 	@Id
-	@GeneratedValue
 	@Column(columnDefinition = "uuid", updatable = false, nullable = false)
 	private UUID id;
 	
 	@ManyToOne
-	@JoinColumn(name = "linha_id", nullable = false)
+	@JoinColumn(name = "line_id", nullable = false)
 	private Line line;
 	
 	@ManyToOne
-	@JoinColumn(name = "parada_id", nullable = false)
+	@JoinColumn(name = "stop_id", nullable = false)
 	private Stop stop;
 	
-	@Column(name = "ordem", nullable = false)
-	private BigInteger order;
+	@Column(name = "lineup", nullable = false)
+	private BigInteger lineup;
 }

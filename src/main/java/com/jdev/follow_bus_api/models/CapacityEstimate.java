@@ -6,6 +6,7 @@ import java.util.UUID;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -13,25 +14,25 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "lotacao_estimativa", schema = "followbus")
+@Table(name = "capacity_estimate", schema = "followbus")
 @Getter
 @Setter
 public class CapacityEstimate {
 
-	@GeneratedValue
+	@Id
 	@Column(columnDefinition = "uuid", updatable = false, nullable = false)
 	private UUID id;
 	
 	@ManyToOne
-	@JoinColumn(name = "linha_id")
+	@JoinColumn(name = "line_id")
 	private Line line;
 	
-	@Column(name = "hora", nullable = false)
+	@Column(name = "time", nullable = false)
 	private LocalDateTime time;
 	
-	@Column(name = "dia_semana")
+	@Column(name = "day_week")
 	private int dayOfWeek;
 	
-	@Column(name = "estimativa_ocupacao_percentual")
+	@Column(name = "occupancy_estimate")
 	private Double occupancyEstimate;
 }

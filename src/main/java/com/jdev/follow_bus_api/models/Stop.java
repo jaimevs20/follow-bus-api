@@ -1,8 +1,10 @@
 package com.jdev.follow_bus_api.models;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,18 +16,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "parada", schema = "followbus", 
+@Table(name = "stop", schema = "followbus", 
 	uniqueConstraints = @UniqueConstraint(columnNames = {"latitude", "longitude"}))
 @Getter
 @Setter
 public class Stop {
 
 	@Id
-	@GeneratedValue
 	@Column(columnDefinition = "uuid", updatable = false, nullable = false)
 	private UUID id;
 	
-	@Column(name = "nome", nullable = false, length = 100)
+	@Column(name = "name", nullable = false, length = 100)
 	private String name;
 	
 	@Column(name = "latitude", nullable = false)
@@ -35,5 +36,6 @@ public class Stop {
 	private Double longitude;
 	
 	@OneToMany(mappedBy = "stop")
-	private List<LineStop> lines; 
+	private List<LineStop> lines;
+	
 }

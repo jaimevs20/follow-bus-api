@@ -1,0 +1,62 @@
+{
+  "lines": [
+    {
+      "id": "d6b12bfa-837f-4a1a-a356-c4d1d749ccaf",
+      "name": "Linha 1 - Estação A / Estação B",
+      "code": "001",
+	  "direction": "Centro",
+	  "active": true,
+      "stops": [
+        {
+          "id": "45be1d2d-5272-47b2-9b86-8e97cf75beec",
+          "lineup": 1,
+          "stop": {
+            "id": "748b02d0-1216-4b65-8ee2-41ef45621e60",
+            "name": "Estação A",
+            "latitude": -12.9600,
+            "longitude": -38.4900
+          }
+        },
+        {
+          "id": "0e09721b-ec4c-4df7-8fe2-6d8ef5373c6e",
+          "lineup": 2,
+          "stop": {
+            "id": "05a41a08-5a33-4a3c-b7ee-88a3d38f9c1f",
+            "name": "Estação B",
+            "latitude": -12.9700,
+            "longitude": -38.5000
+          }
+        }
+      ]
+    },
+    {
+      "id": "b3f13c4a-4b7d-4576-b4e5-4d9a60a403cf",
+      "name": "Linha 2 - Estação C / Estação D",
+      "code": "002",
+	  "direction": "Acesso Norte",
+	  "active": true,
+      "stops": [
+        {
+          "id": "f7ed51cf-7984-4c14-bc65-3ef9b0b17988",
+          "lineup": 1,
+          "stop": {
+            "id": "9d727a08-f142-4a00-9d7e-cb3ff9498c0b",
+            "name": "Estação C",
+            "latitude": -12.9800,
+            "longitude": -38.5100
+          }
+        },
+        {
+          "id": "1b15c242-1d52-4dc0-9a77-43e78225c1d2",
+          "lineup": 2,
+          "stop": {
+            "id": "67de3ef5-cbf4-4d0b-9602-74b3dcbd3924",
+            "name": "Estação D",
+            "latitude": -12.9900,
+            "longitude": -38.5200
+          }
+        }
+      ]
+    }
+  ]
+}

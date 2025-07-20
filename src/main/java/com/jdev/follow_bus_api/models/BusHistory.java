@@ -6,6 +6,7 @@ import java.util.UUID;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -13,17 +14,17 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "veiculo_historico", schema = "followbus")
+@Table(name = "bus_history", schema = "followbus")
 @Getter
 @Setter
 public class BusHistory {
 
-	@GeneratedValue
+	@Id
 	@Column(columnDefinition = "uuid", updatable = false, nullable = false)
 	private UUID id;
 	
 	@ManyToOne
-	@JoinColumn(name = "linha_id")
+	@JoinColumn(name = "line_id")
 	private Line line;
 	
 	@Column(name = "latitude")
@@ -32,13 +33,13 @@ public class BusHistory {
 	@Column(name = "longitude")
 	private Double longitude;
 	
-	@Column(name = "horario", nullable = false)
+	@Column(name = "time", nullable = false)
 	private OffsetDateTime time;
 	
-	@Column(name = "velocidade_kmh")
+	@Column(name = "speed_kmh")
 	private Double speed;
 	
-	@Column(name = "numero_veiculo", length = 20)
+	@Column(name = "bus_number", length = 20)
 	private String busNumber;
 	
 }
